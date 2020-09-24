@@ -23,7 +23,7 @@ $(rainbowBtn).click(() => {
 });
 
 // Detect mouse movement
-$(document).on("mousemove", event => {
+$(document).on("mousemove touchmove", event => {
   const x = event.pageX;
   const y = event.pageY;
   moveCursorDiv(x, y);
@@ -32,7 +32,7 @@ $(document).on("mousemove", event => {
   paint(x, y);
 });
 
-$(document).on("mousedown", event => {
+$(document).on("mousedown touchstart", event => {
   
   // To ensure painting isn't available when mouse is near del-button
   if (!isNoPaint) {
@@ -40,7 +40,7 @@ $(document).on("mousedown", event => {
   }
 });
 
-$(document).on("mouseup", event => {
+$(document).on("mouseup touchend", event => {
   shouldPaint = false;
 });
 
